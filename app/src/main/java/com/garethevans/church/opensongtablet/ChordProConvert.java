@@ -233,17 +233,15 @@ class ChordProConvert {
                 if (lineAux.indexOf("[") != 0 && lineAux.indexOf(";") != 0
                         && lineAux.indexOf(".") != 0 ) {
                     /*the line contains lyrics*/
-
                     line2[x] = " " + line2[x];
-
-
                 }
-
-
-                else{
+                else if (lineAux.indexOf(".") == 0) {
+                    /*the line contains chords, adjust for space inserted to lyrics*/
+                    line2[x] = ". " + line2[x].substring(1);
+                }
+                else {
                     //Keep the line without spaces before a letter of symbol
                     line2[x] = lineAux;
-
                 }
 
             }
@@ -512,6 +510,9 @@ class ChordProConvert {
             s = s.replace("]", "");
             if (!s.startsWith(" ")) {
                 s = " " + s;
+                if (tempchordline.length() > 0) {
+                    tempchordline.insert(0, " ");
+                }
             }
             if (tempchordline.length() > 0) {
                 s = "." + tempchordline + "\n" + s;

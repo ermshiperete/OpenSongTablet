@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion '27.0.3'
     buildTypes {
         release {
             minifyEnabled false
@@ -23,6 +22,8 @@ android {
     defaultConfig {
         applicationId "com.garethevans.church.opensongtablet"
         multiDexEnabled true
+        minSdkVersion 19
+        targetSdkVersion 26
         //android.compileOptions.sourceCompatibility 1.8
         //android.compileOptions.targetCompatibility 1.8
 
@@ -33,6 +34,10 @@ android {
 
     productFlavors {
     }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
 }
 
 buildscript {
@@ -42,7 +47,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.4'
+        classpath 'com.android.tools.build:gradle:3.3.0'
         //classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
         classpath 'me.tatarka:gradle-retrolambda:3.7.0'
     }
@@ -79,4 +84,8 @@ dependencies {
     implementation 'com.annimon:stream:1.1.9'
     //implementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
     //implementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+
+    // Testing-only dependencies
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.mockito:mockito-core:2.+'
 }

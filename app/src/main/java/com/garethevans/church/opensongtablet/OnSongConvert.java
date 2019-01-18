@@ -599,96 +599,7 @@ class OnSongConvert {
 		for (int x = 0; x < numlines; x++) {
 			// Try to guess tags used
 			if (line[x].indexOf(";")!=0) {
-				line[x] = line[x].replace(" Intro:", "[Intro]");
-				line[x] = line[x].replace(" Outro:", "[Outro]");
-				line[x] = line[x].replace(" V:", "[V]");
-				line[x] = line[x].replace(" V1:", "[V1]");
-				line[x] = line[x].replace(" V2:", "[V2]");
-				line[x] = line[x].replace(" V3:", "[V3]");
-				line[x] = line[x].replace(" V4:", "[V4]");
-				line[x] = line[x].replace(" V5:", "[V5]");
-				line[x] = line[x].replace(" V6:", "[V6]");
-				line[x] = line[x].replace(" V7:", "[V7]");
-				line[x] = line[x].replace(" V8:", "[V8]");
-				line[x] = line[x].replace(" V9:", "[V9]");
-				line[x] = line[x].replace(" Verse:", "[V]");
-				line[x] = line[x].replace(" Verse 1:", "[V1]");
-				line[x] = line[x].replace(" Verse 2:", "[V2]");
-				line[x] = line[x].replace(" Verse 3:", "[V3]");
-				line[x] = line[x].replace(" Verse 4:", "[V4]");
-				line[x] = line[x].replace(" (Verse)", "[V]");
-				line[x] = line[x].replace(" (Verse 1)", "[V1]");
-				line[x] = line[x].replace(" (Verse 2)", "[V2]");
-				line[x] = line[x].replace(" (Verse 3)", "[V3]");
-				line[x] = line[x].replace(" (Chorus)", "[C]");
-                line[x] = line[x].replace(" Chorus", "[C]");
-				line[x] = line[x].replace(" C:", "[C]");
-				line[x] = line[x].replace(" C1:", "[C1]");
-				line[x] = line[x].replace(" C2:", "[C2]");
-				line[x] = line[x].replace(" C3:", "[C3]");
-				line[x] = line[x].replace(" C4:", "[C4]");
-				line[x] = line[x].replace(" C5:", "[C5]");
-				line[x] = line[x].replace(" C6:", "[C6]");
-				line[x] = line[x].replace(" C7:", "[C7]");
-				line[x] = line[x].replace(" C8:", "[C8]");
-				line[x] = line[x].replace(" C9:", "[C9]");
-				line[x] = line[x].replace(" Chorus:", "[C]");
-				line[x] = line[x].replace(" Chorus 1:", "[C1]");
-				line[x] = line[x].replace(" Chorus 2:", "[C2]");
-				line[x] = line[x].replace(" Chorus 3:", "[C3]");
-				line[x] = line[x].replace(" Prechorus:", "[P]");
-				line[x] = line[x].replace(" Prechorus 1:", "[P1]");
-				line[x] = line[x].replace(" Prechorus 2:", "[P2]");
-				line[x] = line[x].replace(" Prechorus 3:", "[P3]");
-				line[x] = line[x].replace(" Bridge:", "[B]");
-				line[x] = line[x].replace(" Tag:", "[T]");
-				line[x] = line[x].replace("Intro:", "[Intro]");
-				line[x] = line[x].replace("Outro:", "[Outro]");
-				line[x] = line[x].replace("V:", "[V]");
-				line[x] = line[x].replace("V1:", "[V1]");
-				line[x] = line[x].replace("V2:", "[V2]");
-				line[x] = line[x].replace("V3:", "[V3]");
-				line[x] = line[x].replace("V4:", "[V4]");
-				line[x] = line[x].replace("V5:", "[V5]");
-				line[x] = line[x].replace("V6:", "[V6]");
-				line[x] = line[x].replace("V7:", "[V7]");
-				line[x] = line[x].replace("V8:", "[V8]");
-				line[x] = line[x].replace("V9:", "[V9]");
-				line[x] = line[x].replace("Verse:", "[V]");
-				line[x] = line[x].replace("Verse 1:", "[V1]");
-				line[x] = line[x].replace("Verse 2:", "[V2]");
-				line[x] = line[x].replace("Verse 3:", "[V3]");
-				line[x] = line[x].replace("Verse 4:", "[V4]");
-				line[x] = line[x].replace("(Verse)", "[V]");
-				line[x] = line[x].replace("(Verse 1)", "[V1]");
-				line[x] = line[x].replace("(Verse 2)", "[V2]");
-				line[x] = line[x].replace("(Verse 3)", "[V3]");				
-				line[x] = line[x].replace("(Chorus)", "[C]");
-				line[x] = line[x].replace("C:", "[C]");
-				line[x] = line[x].replace("C1:", "[C1]");
-				line[x] = line[x].replace("C2:", "[C2]");
-				line[x] = line[x].replace("C3:", "[C3]");
-				line[x] = line[x].replace("C4:", "[C4]");
-				line[x] = line[x].replace("C5:", "[C5]");
-				line[x] = line[x].replace("C6:", "[C6]");
-				line[x] = line[x].replace("C7:", "[C7]");
-				line[x] = line[x].replace("C8:", "[C8]");
-				line[x] = line[x].replace("C9:", "[C9]");
-				line[x] = line[x].replace("Chorus:", "[C]");
-				line[x] = line[x].replace("Chorus 1:", "[C1]");
-				line[x] = line[x].replace("Chorus 2:", "[C2]");
-				line[x] = line[x].replace("Chorus 3:", "[C3]");
-				line[x] = line[x].replace("Prechorus:", "[P]");
-				line[x] = line[x].replace("Prechorus 1:", "[P1]");
-				line[x] = line[x].replace("Prechorus 2:", "[P2]");
-				line[x] = line[x].replace("Prechorus 3:", "[P3]");
-				line[x] = line[x].replace("Bridge:", "[B]");
-				line[x] = line[x].replace("Tag:", "[T]");
-
-				// Guess custom tags - will be a short line with :
-				if (line[x].length()<15 && line[x].contains(":") && line[x].indexOf("{")!=0) {
-					line[x] = "[" + line[x].replace(":","") + "]";
-				}
+				line[x] = guessTags(line[x]);
 			}
 			parsedlines.append(line[x]).append("\n");
 		}
@@ -930,6 +841,38 @@ class OnSongConvert {
         }
 
 		return true;
+	}
+
+	private static String guessOneTag(String s, String tag, String newTag) {
+		String x = s.replaceAll("(?i) *\\(?" + tag + " *(?<number>([0-9 a-z])*)(:|\\))?",
+				"[" + newTag + "${number}]");
+		if (x.equals(s))
+			return s;
+		return x.replaceAll("\\[(" + newTag + ") *([^ \\]]+)\\]", "[$1$2]");
+	}
+
+	public static String guessTags(String s) {
+		s = guessOneTag(s, "(?<![a-z])(intro|outro|T|V|P|C|B)(?![a-z])", "$1");
+		s = guessOneTag(s, "tag", "T");
+		s = guessOneTag(s, "verse", "V");
+		s = guessOneTag(s, "pre-?chorus", "P");
+		s = guessOneTag(s, "chorus", "C");
+		s = guessOneTag(s, "bridge", "B");
+		// German tags
+		s = guessOneTag(s, "vers", "V");
+		s = guessOneTag(s, "refrain", "C");
+
+		// Guess custom tags - will be a short line with :
+		if (s.length()<15 && s.contains(":") && s.indexOf("{")!=0) {
+			if (s.indexOf(";") >= 0 || s.indexOf("#") >= 0) {
+				s = ";[" + s.substring(1).replace(":", "") + "]";
+			} else {
+				s = "[" + s.replace(":", "") + "]";
+			}
+		}
+		s = s.replace("[[", "[");
+		s = s.replace("]]", "]");
+		return s.trim();
 	}
 
 	static void doBatchConvert(Context contxt) {
